@@ -5,13 +5,14 @@
 *
 */
 #include "fsm.h"
-
+#include "stdio.h"
 /*创建一个状态机*/
 FSM* CreateFsmMachine(void)
 {
     FSM *fsm;
     fsm = NULL;
     fsm = zg_Malloc(sizeof(FSM));
+    printf("fsm = 0x%x\r\n",fsm);
     return fsm;
 }
 

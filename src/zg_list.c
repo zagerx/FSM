@@ -25,6 +25,7 @@ ROOT_NODE* CreateList(void)
 {
     ROOT_NODE *proot = NULL;
     proot = zg_Malloc(sizeof(ROOT_NODE));
+    InitList(proot);
     return proot;
 }
 

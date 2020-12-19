@@ -40,10 +40,13 @@ ROOT_NODE* CreateEventList(void)
 void Push_eventList(Event *e)
 {
     // gEventlist[0] = e;
-    LIST_NODE *pNode;
-    pNode = zg_Malloc(sizeof(LIST_NODE));
+    LIST_NODE *pNode = NULL;
+    pNode = (LIST_NODE *)zg_Malloc(sizeof(LIST_NODE));
+    
     pNode->pData = (void *)e;
+    
     pNode->Priority = e->priority;
+
     InsertNodeToListHead(pEventListRoot,pNode);
 } 
 
@@ -54,7 +57,7 @@ Event* GetEventFromEventList(void)
     // return gEventlist[0];
     LIST_NODE *pNode;
     Event *e;
-    pNode = GetNodeFromList(pEventListRoot,1);//获取首个节点事件
+    pNode = GetNodeFromList(pEventListRoot,0);//获取首个节点事件
     e = (Event *)pNode->pData;
     return e;
 }

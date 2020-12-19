@@ -12,10 +12,11 @@ struct list_node
 {
     /* data */
     LIST_NODE *pPreNode;
-    LIST_NODE *pNextNode;
-    uint8_t Priority;
+    LIST_NODE *pNextNode;    
     
     void    *pData;
+
+    uint8_t Priority;
 };
 
 /*根节点类型*/
